@@ -5,7 +5,7 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace Notifications
 {
-    [Service(typeof (INotificationService), Lifetime.Application)]
+	[Service(typeof (INotificationService), Lifetime.Application)]
     public class NotificationService : INotificationService
     {
         private readonly IServiceLocator serviceLocator;
@@ -23,22 +23,13 @@ namespace Notifications
             }
         }
 
-        public void NotifyAlive<T>(T item)
-        {
-            try
-            {
-                var subscriber = serviceLocator.GetInstance<IAmAliveSubscriber<T>>();
-                subscriber.AmAlive(item);
-            }
-            catch (ActivationException)
-            {
-            }
+		public void NotifyAlive<T>(T item)
+		{
+			var subscriber = serviceLocator.GetInstance<IAmAliveSubscriber<T>>();
+			subscriber.AmAlive(item);
+		}
 
-            var subscribers = serviceLocator.GetAllInstances<IAmAliveSubscriber<T>>();
-            subscribers.ForEach(s => s.AmAlive(item));
-        }
-
-        public void NotifyDeleted<T>(T item)
+		public void NotifyDeleted<T>(T item)
         {
             throw new System.NotImplementedException();
         }

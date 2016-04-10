@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmAliveSubscriber.cs" />
     <Compile Include="StateChangeSubscriber.cs" />
     <Compile Include="NotificationService.cs" />
     <Compile Include="OrderStateChangeSubscriber.cs" />
