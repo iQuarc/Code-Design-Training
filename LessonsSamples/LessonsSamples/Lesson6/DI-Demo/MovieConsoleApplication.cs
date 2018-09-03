@@ -1,66 +1,65 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LessonsSamples.Lesson6
 {
-	public class MovieConsoleApplication
-	{
-		private readonly IMovieConsoleCreator movieCreator;
-		private readonly IMovieTranslator movieTranslator;
+    public class MovieConsoleApplication
+    {
+        private readonly IDictionary<char, ICommand> commands;
 
-		public MovieConsoleApplication(IMovieConsoleCreator movieCreator, IMovieTranslator movieTranslator)
-		{
-			this.movieCreator = movieCreator;
-			this.movieTranslator = movieTranslator;
-		}
+        public MovieConsoleApplication(IEnumerable<ICommand> commands)
+        {
+            this.commands = commands.ToDictionary(c => c.KeyChar);
+        }
 
-		public void Run()
-		{
-			WriteMenu();
+        public void Run()
+        {
+            WriteMenu();
 
-			ConsoleKeyInfo c;
-			do
-			{
-				c = Console.ReadKey();
+            ConsoleKeyInfo c;
+            do
+            {
+                c = Console.ReadKey();
                 WriteLineSeparator();
 
-                if (c.KeyChar == '1')
-                    movieCreator.Open();
-			    if (c.KeyChar == '2')
-			        movieTranslator.TranslateTitles();
+                if (commands.TryGetValue(c.KeyChar, out var cmd))
+                {
+                    cmd.Execute();
+                }
 
                 if (!IsExitKey(c))
                     WriteMenu();
+            } while (!IsExitKey(c));
+        }
 
-			} while (!IsExitKey(c));
+        private void WriteMenu()
+        {
+            WriteLineSeparator();
 
-		}
+            foreach (var cmd in commands.OrderBy(c => c.Key))
+            {
+                Console.WriteLine($"{cmd.Key}. {cmd.Value.MenuEntry}");
+            }
 
-	    private static void WriteMenu()
-		{
-			WriteLineSeparator();
-
-		    Console.WriteLine("1. Create movies");
-			Console.WriteLine("2. Translate movies");
-			Console.WriteLine("3. List movies");
-			Console.WriteLine("4. Find movie");
-			Console.WriteLine();
-			Console.WriteLine("0. Quit");
+            Console.WriteLine();
+            Console.WriteLine("0. Quit");
 
             Console.Write("Your command: ");
-		}
+        }
 
-	    private static void WriteLineSeparator()
-	    {
-	        Console.WriteLine();
-	        Console.WriteLine("------------------------------");
+        private static void WriteLineSeparator()
+        {
             Console.WriteLine();
-	    }
+            Console.WriteLine("------------------------------");
+            Console.WriteLine();
+        }
 
-	    private static bool IsExitKey(ConsoleKeyInfo c)
-	    {
-	        return c.KeyChar == '0' || 
+        private static bool IsExitKey(ConsoleKeyInfo c)
+        {
+            return c.KeyChar == '0' ||
                    c.Key == ConsoleKey.Escape ||
                    c.KeyChar == 'q' || c.KeyChar == 'Q';
-	    }
-	}
+        }
+    }
 }

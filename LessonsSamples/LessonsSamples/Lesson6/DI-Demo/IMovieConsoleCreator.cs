@@ -2,13 +2,7 @@
 
 namespace LessonsSamples.Lesson6
 {
-	public interface IMovieConsoleCreator
-	{
-		void Open();
-
-	}
-
-	class MovieConsoleCreator : IMovieConsoleCreator
+	class MovieConsoleCreator : ICommand
 	{
 		private readonly ITextStorage storage;
 
@@ -17,7 +11,7 @@ namespace LessonsSamples.Lesson6
 			this.storage = storage;
 		}
 
-		public void Open()
+		public void Execute()
 		{
 			Console.WriteLine("Insert One Movie on each line.");
 			Console.WriteLine("Press ESC when you are done.");
@@ -40,5 +34,8 @@ namespace LessonsSamples.Lesson6
 			Console.WriteLine();
 			Console.WriteLine("Thank you!. Your movies were created");
 		}
+
+	    public char KeyChar => '1';
+	    public string MenuEntry => "Create movies";
 	}
 }
