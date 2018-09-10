@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using LessonsSamples.Lesson6.Demo;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace LessonsSamples.Lesson6
 {
@@ -17,7 +18,7 @@ namespace LessonsSamples.Lesson6
         private static void ConfigureServices(ServiceCollection services)
         {
             services
-                .AddTransient<ICommand, MovieConsoleCreator>()
+                .AddTransient<ICommand, MoviesConsoleCreator2>()
                 .AddTransient<ICommand, MovieTranslator>()
                 .AddTransient<ITextStorage, FileStorage>()
 

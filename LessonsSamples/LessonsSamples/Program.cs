@@ -20,8 +20,6 @@ namespace LessonsSamples
             UnityDemo.MainFunc();
             //NetCoreContainerDemo.MainFunc();
             //NetCoreConstructorSelectionDemo.MainFunc();
-
-
             //NetCoreLifetimeDemo.MainFunc();
 
             Console.WriteLine();

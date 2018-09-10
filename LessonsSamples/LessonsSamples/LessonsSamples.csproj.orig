@@ -38,7 +38,7 @@
       <HintPath>..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\CommonServiceLocator.dll</HintPath>
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net46\CommonServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -103,25 +103,25 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.Configuration.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Container, Version=5.8.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.Container.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Container.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.Interception.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Interception.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.Interception.Configuration.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.Interception.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.RegistrationByConvention.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.5.8.11\lib\net47\Unity.ServiceLocation.dll</HintPath>
+      <HintPath>..\packages\Unity.5.8.11\lib\net46\Unity.ServiceLocation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -139,12 +139,7 @@
     <Compile Include="Lesson5\Line.cs" />
     <Compile Include="Lesson5\Modem.cs" />
     <Compile Include="Lesson5\Rectangle.cs" />
-    <Compile Include="Lesson6\CoreContainerConstructorSelection\App.cs" />
-    <Compile Include="Lesson6\CoreContainerConstructorSelection\IRootService.cs" />
-    <Compile Include="Lesson6\CoreContainerConstructorSelection\IService2.cs" />
-    <Compile Include="Lesson6\CoreContainerConstructorSelection\NetCoreConstructorSelectionDemo.cs" />
     <Compile Include="Lesson6\CoreContainerLifetime\App.cs" />
-    <Compile Include="Lesson6\CoreContainerConstructorSelection\IService1.cs" />
     <Compile Include="Lesson6\CoreContainerLifetime\MyController.cs" />
     <Compile Include="Lesson6\CoreContainerLifetime\IOperation.cs" />
     <Compile Include="Lesson6\CoreContainerLifetime\NetCoreLifetimeDemo.cs" />
@@ -152,14 +147,14 @@
     <Compile Include="Lesson6\CoreContainerLifetime\Service.cs" />
     <Compile Include="Lesson6\DI-Demo\AppConsole.cs" />
     <Compile Include="Lesson6\DI-Demo\FileStorage.cs" />
-    <Compile Include="Lesson6\DI-Demo\ICommand.cs" />
+<<<<<<< HEAD
     <Compile Include="Lesson6\DI-Demo\IConsole.cs" />
-    <Compile Include="Lesson6\DI-Demo\IEntityConsoleReader.cs" />
-    <Compile Include="Lesson6\DI-Demo\IEntityFieldsReader.cs" />
+=======
+    <Compile Include="Lesson6\DI-Demo\ICommand.cs" />
+>>>>>>> [Samples][L6] Solve ex 4: Create ICommand
+    <Compile Include="Lesson6\DI-Demo\IMovieConsoleCreator.cs" />
     <Compile Include="Lesson6\DI-Demo\ITextStorage.cs" />
     <Compile Include="Lesson6\DI-Demo\MovieConsoleApplication.cs" />
-    <Compile Include="Lesson6\DI-Demo\MoviesConsoleCreator.cs" />
-    <Compile Include="Lesson6\DI-Demo\MoviesConsoleCreator2.cs" />
     <Compile Include="Lesson6\DI-Demo\MovieTranslator.cs" />
     <Compile Include="Lesson6\DI-Demo\NetCoreContainerDemo.cs" />
     <Compile Include="Lesson6\DI-Demo\UnityDemo.cs" />
@@ -168,18 +163,17 @@
     <Compile Include="Lesson6\DI_AndDisposable\RepositoryFactory.cs" />
     <Compile Include="Lesson6\DI_AndDisposable\Service11.cs" />
     <Compile Include="Lesson6\DI_AndDisposable\Service12.cs" />
-    <Compile Include="Lesson6\Expenses\2.Expense.cs" />
-    <Compile Include="Lesson6\Expenses\1.ExpensesService.cs" />
-    <Compile Include="Lesson6\Expenses\1.IExpensesService.cs" />
+    <Compile Include="Lesson6\Expenses\Expense.cs" />
+    <Compile Include="Lesson6\Expenses\ExpensesService.cs" />
+    <Compile Include="Lesson6\Expenses\IExpensesService.cs" />
     <Compile Include="Lesson6\IMovieProvider.cs" />
     <Compile Include="Lesson6\Logger\LogEntry.cs" />
     <Compile Include="Lesson6\Logger\Logger.cs" />
-    <Compile Include="Lesson6\Movie.cs" />
     <Compile Include="Lesson6\MovieLister_DI.cs" />
     <Compile Include="Lesson6\MovieListerFactory.cs" />
     <Compile Include="Lesson6\MovieLister_InterafaceInj.cs" />
     <Compile Include="Lesson6\MovieLister_SL.cs" />
-    <Compile Include="Lesson6\Expenses\1.ExpenseData.cs" />
+    <Compile Include="Lesson6\Expenses\ExpenseData.cs" />
     <Compile Include="Lesson6\ServiceLocatorTestability\TestRunner.cs" />
     <Compile Include="Lesson6\ServiceLocatorTestability\UnderTest.cs" />
     <Compile Include="Lesson6\ServiceLocatorTestability\UnitTest.cs" />
@@ -201,16 +195,10 @@
     <Compile Include="Lesson7\CohesionCoupling\PageData.cs" />
     <Compile Include="Lesson7\CohesionCoupling\PageXml.cs" />
     <Compile Include="Lesson7\CohesionCoupling\01_PageXmlExport.cs" />
-    <Compile Include="Lesson7\CohesionCoupling\10_PageXmlExportClient.cs" />
-    <Compile Include="Lesson7\CohesionCoupling\11_PageXmlExportClient.cs" />
-    <Compile Include="Lesson7\CohesionCoupling\12_PageXmlExportClientcs.cs" />
-    <Compile Include="Lesson7\CohesionCoupling\13_PageXmlExportClient.cs" />
     <Compile Include="Lesson7\ErrorHandling\DeviceController.cs" />
     <Compile Include="Lesson7\ErrorHandling\CodeSnippet.cs" />
     <Compile Include="Lesson7\InheritanceComposition\Account.cs" />
     <Compile Include="Lesson7\InheritanceComposition\AccountClientCode.cs" />
-    <Compile Include="Lesson7\InheritanceComposition\AccountClientCodeTests.cs" />
-    <Compile Include="Lesson7\InheritanceComposition\AccountTests.cs" />
     <Compile Include="Lesson7\InheritanceComposition\ILogMessageParser.cs" />
     <Compile Include="Lesson7\InheritanceComposition\LogEntry.cs" />
     <Compile Include="Lesson7\InheritanceComposition\LogSource.cs" />

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace LessonsSamples.Lesson6
 {
-	class FileStorage : ITextStorage
+  class FileStorage : ITextStorage
 	{
 		private readonly string filename;
 
