@@ -1,5 +1,4 @@
-﻿using LessonsSamples.Lesson6.Demo;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace LessonsSamples.Lesson6
 {
@@ -21,10 +20,14 @@ namespace LessonsSamples.Lesson6
                 .AddTransient<ICommand, MoviesConsoleCreator2>()
                 .AddTransient<ICommand, MovieTranslator>()
                 .AddTransient<ITextStorage, FileStorage>()
+                
+                .AddTransient<IConsole, AppConsole>()
+                .AddTransient<IEntityReader, NetCore.EntityReader>()
+                .AddTransient<IEntityFieldsReader<Movie>, MovieFieldsReader>()
+                .AddTransient<IFileRepository, InMemoryFileRepository>()
 
                 // Demo the difference between Scoped and Transient. This being the root container, Scoped will be promoted to Singleton
                 .AddTransient<MovieConsoleApplication, MovieConsoleApplication>()
-
                 ;
         }
     }

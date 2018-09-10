@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace LessonsSamples.Lesson6.Demo
+namespace LessonsSamples.Lesson6
 {
     class MoviesConsoleCreator2 : ICommand
     {
-        private readonly IEntityConsoleReader entityConsoleReader;
+        private readonly IEntityReader entityReader;
         private readonly IConsole console;
         private readonly IFileRepository repository;
 
-        public MoviesConsoleCreator2(IEntityConsoleReader entityConsoleReader, IConsole console, IFileRepository repository)
+        public MoviesConsoleCreator2(IEntityReader entityReader, IConsole console, IFileRepository repository)
         {
-            this.entityConsoleReader = entityConsoleReader;
+            this.entityReader = entityReader;
             this.console = console;
             this.repository = repository;
         }
@@ -25,17 +25,17 @@ namespace LessonsSamples.Lesson6.Demo
             {
                 console.WriteLine("------ Enter data for a new Movie ---------");
 
-                var fieldsReader = entityConsoleReader.BeginEntityRead<Movie>();
+                var fieldsReader = entityReader.BeginEntityRead<Movie>();
                 foreach (var field in fieldsReader.GetFields())
                 {
                     var value = console.AskInput($"Enter value for: Movie.{field}: ");
-                    fieldsReader.StoreFieldValue(value);
+                    fieldsReader.StoreFieldValue(field, value);
                 }
 
                 Movie m = fieldsReader.GetEntity();
-                repository.Save(m);
+                repository.Add(m);
 
-                string c = console.AskInput("Enter another movie? [Y/N]");
+                readMore = console.AskInput("Enter another movie? [Y/N]");
 
             } while (string.Compare(readMore, "y", StringComparison.InvariantCultureIgnoreCase)== 0);
 
@@ -45,10 +45,5 @@ namespace LessonsSamples.Lesson6.Demo
 
         public char KeyChar => '3';
         public string MenuEntry => "Create movies";
-    }
-
-    internal interface IFileRepository
-    {
-        void Save(Movie movie);
     }
 }
