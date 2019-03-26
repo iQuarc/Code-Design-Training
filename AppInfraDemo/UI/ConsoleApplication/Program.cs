@@ -15,10 +15,7 @@ namespace ConsoleApplication
 		private static void Main(string[] args)
 		{
 		    SetupDataDirectory();
-			IServiceLocator serviceLocator = Bootstrapp();
-
-			//OrdersConsoleApplication app = serviceLocator.GetInstance<OrdersConsoleApplication>();
-			//app.ShowAllOrders();
+			Bootstrapp();
 
 			Console.WriteLine();
 			Console.WriteLine("Press any key to close the application...");

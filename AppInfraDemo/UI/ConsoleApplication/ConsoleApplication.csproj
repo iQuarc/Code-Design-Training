@@ -83,7 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConsole.cs" />
+    <Compile Include="ConsoleUiModule.cs" />
     <Compile Include="IConsole.cs" />
+    <Compile Include="IConsoleCommand.cs" />
     <Compile Include="OrdersConsoleApplication.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

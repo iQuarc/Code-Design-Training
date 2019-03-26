@@ -13,7 +13,6 @@ namespace ConsoleApplication
 			this.orderingService = orderingService;
 		}
 
-
 		public void ShowAllOrders()
 		{
 			console.WriteLine("OrdersConsole: Show all orders function");
