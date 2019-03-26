@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ConsoleApplication
+namespace Contracts.ConsoleUi
 {
-	internal interface IConsole
+    public interface IConsole
 	{
 		string AskInput(string message);
 	    string ReadLine();

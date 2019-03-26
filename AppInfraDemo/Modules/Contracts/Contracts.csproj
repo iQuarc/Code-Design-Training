@@ -35,6 +35,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleUi\IConsole.cs" />
+    <Compile Include="ConsoleUi\IConsoleCommand.cs" />
     <Compile Include="Crm\ICrmService.cs" />
     <Compile Include="Location\ILocationService.cs" />
     <Compile Include="Notifications\IAmAliveSubscriber.cs" />

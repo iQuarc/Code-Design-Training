@@ -84,9 +84,6 @@
   <ItemGroup>
     <Compile Include="AppConsole.cs" />
     <Compile Include="ConsoleUiModule.cs" />
-    <Compile Include="IConsole.cs" />
-    <Compile Include="IConsoleCommand.cs" />
-    <Compile Include="OrdersConsoleCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OnModuleIsAliveConsole.cs" />

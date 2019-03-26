@@ -1,5 +1,5 @@
 using System;
-using System.Runtime.InteropServices;
+using Contracts.ConsoleUi;
 using iQuarc.AppBoot;
 using iQuarc.SystemEx;
 

@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication
+﻿namespace Contracts.ConsoleUi
 {
     public interface IConsoleCommand
     {
