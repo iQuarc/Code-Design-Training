@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class CountryRegionCurrency
+    public partial class CountryRegionCurrency : IAuditable
     {
         public string CountryRegionCode { get; set; }
         public string CurrencyCode { get; set; }

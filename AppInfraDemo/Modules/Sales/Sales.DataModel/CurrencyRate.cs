@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class CurrencyRate
+    public partial class CurrencyRate : IAuditable
     {
         public CurrencyRate()
         {

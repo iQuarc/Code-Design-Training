@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SalesPersonQuotaHistory
+    public partial class SalesPersonQuotaHistory : IAuditable
     {
         public int BusinessEntityID { get; set; }
         public System.DateTime QuotaDate { get; set; }

@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SalesOrderDetail
+    public partial class SalesOrderDetail : IAuditable
     {
         public int SalesOrderID { get; set; }
         public int SalesOrderDetailID { get; set; }

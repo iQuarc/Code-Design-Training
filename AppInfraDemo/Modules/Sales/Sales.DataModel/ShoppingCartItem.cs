@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class ShoppingCartItem
+    public partial class ShoppingCartItem : IAuditable
     {
         public int ShoppingCartItemID { get; set; }
         public string ShoppingCartID { get; set; }

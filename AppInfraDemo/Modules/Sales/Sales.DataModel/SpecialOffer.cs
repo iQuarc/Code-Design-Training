@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SpecialOffer
+    public partial class SpecialOffer : IAuditable
     {
         public SpecialOffer()
         {

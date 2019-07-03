@@ -312,7 +312,7 @@ public class CodeStringGenerator
             Accessibility.ForType(entity),
             _code.SpaceAfter(_code.AbstractOption(entity)),
             _code.Escape(entity),
-            _code.StringBefore(" : ", _typeMapper.GetTypeName(entity.BaseType)));
+            _code.StringBefore(" : ", "IAuditable"));
     }
     
     public string EnumOpening(SimpleType enumType)
@@ -419,10 +419,11 @@ public class CodeStringGenerator
             ? string.Format(
                 CultureInfo.InvariantCulture,
                 "{0}using System;{1}" +
-                "{2}",
+                "{2}" + "{3}",
                 inHeader ? Environment.NewLine : "",
                 includeCollections ? (Environment.NewLine + "using System.Collections.Generic;") : "",
-                inHeader ? "" : Environment.NewLine)
+                inHeader ? "" : Environment.NewLine,
+				"using Common.DataModel.Abstractions;"+Environment.NewLine)
             : "";
     }
 }

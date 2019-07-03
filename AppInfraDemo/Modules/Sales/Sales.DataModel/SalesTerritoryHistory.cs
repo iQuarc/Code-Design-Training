@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SalesTerritoryHistory
+    public partial class SalesTerritoryHistory : IAuditable
     {
         public int BusinessEntityID { get; set; }
         public int TerritoryID { get; set; }

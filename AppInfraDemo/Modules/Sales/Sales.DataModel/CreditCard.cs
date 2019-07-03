@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class CreditCard
+    public partial class CreditCard : IAuditable
     {
         public CreditCard()
         {

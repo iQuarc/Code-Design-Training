@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SalesTaxRate
+    public partial class SalesTaxRate : IAuditable
     {
         public int SalesTaxRateID { get; set; }
         public int StateProvinceID { get; set; }

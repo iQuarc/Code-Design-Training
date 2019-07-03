@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SalesTerritory
+    public partial class SalesTerritory : IAuditable
     {
         public SalesTerritory()
         {

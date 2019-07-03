@@ -11,8 +11,9 @@ namespace Sales.DataModel
 {
     using System;
     using System.Collections.Generic;
+    using Common.DataModel.Abstractions;
     
-    public partial class SalesReason
+    public partial class SalesReason : IAuditable
     {
         public SalesReason()
         {
