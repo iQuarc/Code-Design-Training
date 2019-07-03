@@ -5,5 +5,7 @@ namespace Contracts.Sales
         SalesOrderResult PlaceOrder(string customerName, OrderRequest request);
 
 		SalesOrderInfo[] GetOrdersInfo(string customerName);
+
+        void CancelOrdersForCustomer(string customerName);
     }
 }

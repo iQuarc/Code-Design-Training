@@ -17,10 +17,12 @@ namespace ConsoleApplication
 		    SetupDataDirectory();
 			IServiceLocator serviceLocator = Bootstrapp();
 
-			//OrdersConsoleApplication app = serviceLocator.GetInstance<OrdersConsoleApplication>();
-			//app.ShowAllOrders();
+            OrdersConsoleApplication app = serviceLocator.GetInstance<OrdersConsoleApplication>();
+            app.ShowAllOrders();
 
-			Console.WriteLine();
+            app.CancelAllOrdersForCustomer();
+
+            Console.WriteLine();
 			Console.WriteLine("Press any key to close the application...");
 			Console.ReadKey();
 		}

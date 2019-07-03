@@ -5,6 +5,7 @@ using Contracts.Sales;
 using iQuarc.AppBoot;
 using iQuarc.DataAccess;
 using Sales.DataModel;
+using Sales.DataModel.Values;
 
 namespace Sales
 {
@@ -37,7 +38,23 @@ namespace Sales
 		    return orders.ToArray();
 	    }
 
-	    public SalesOrderResult PlaceOrder(string customerName, OrderRequest request)
+        public void CancelOrdersForCustomer(string customerName)
+        {
+            using (var uof = repository.CreateUnitOfWork())
+            {
+                var customerOrders = uof.GetEntities<SalesOrderHeader>()
+                    .Where(o => o.Customer.Person.LastName == customerName);
+
+                foreach (var salesOrderHeader in customerOrders)
+                {
+                    salesOrderHeader.Status = SalesOrderHeaderStatusValues.Cancelled;
+                }
+
+                uof.SaveChanges();
+            }
+        }
+
+        public SalesOrderResult PlaceOrder(string customerName, OrderRequest request)
         {
             Customer c = GetCustomer(customerName);
             if (c == null)

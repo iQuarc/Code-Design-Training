@@ -26,6 +26,15 @@ namespace ConsoleApplication
 			{
 				console.WriteEntity(salesOrderInfo);
 			}
-		}
-	}
+        }
+
+        public void CancelAllOrdersForCustomer()
+        {
+            console.WriteLine("OrdersConsole: Cancel All Orders For Customer");
+            string customerName = console.AskInput("Enter customer last name: ");
+
+            orderingService.CancelOrdersForCustomer(customerName);
+        }
+
+    }
 }
